@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/addSchool",
+      "destination": "/api/addSchool"
+    },
+    {
+      "source": "/listSchools",
+      "destination": "/api/listSchools"
+    }
+  ]
+}

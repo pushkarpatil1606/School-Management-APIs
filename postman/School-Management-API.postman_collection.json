@@ -1,0 +1,71 @@
+{
+  "info": {
+    "name": "School Management API",
+    "_postman_id": "d0b6d1c1-7b5a-4e3f-9fb2-1d7a9c9d1234",
+    "description": "Postman collection for the school management APIs.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Add School",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"ABC Public School\",\n  \"address\": \"Pune, Maharashtra\",\n  \"latitude\": 18.5204,\n  \"longitude\": 73.8567\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/addSchool",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "addSchool"
+          ]
+        },
+        "description": "Adds a school to the MySQL database."
+      }
+    },
+    {
+      "name": "List Schools",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/listSchools?latitude=18.5204&longitude=73.8567",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "listSchools"
+          ],
+          "query": [
+            {
+              "key": "latitude",
+              "value": "18.5204"
+            },
+            {
+              "key": "longitude",
+              "value": "73.8567"
+            }
+          ]
+        },
+        "description": "Returns schools sorted by distance from the user location."
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000"
+    }
+  ]
+}
